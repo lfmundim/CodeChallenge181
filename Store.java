@@ -2,16 +2,19 @@ import java.util.List;
 
 public class Store implements IStore{
   private List<Product> Products;
-  public static Store instance;
+  private static Store instance;
 
-  public Store(){ //Singleton
-    if(this.instance == null){
-      this.instance = new Store();
+  private Store(){}
+
+  public static Store getInstance() {
+  //Singleton
+    if(instance == null){
+      instance = new Store();
     }
-    return this.instance;
+    return instance;
   }
 
   public List<Product> GetProducts(){
-
+    return this.Products;
   }
 }
