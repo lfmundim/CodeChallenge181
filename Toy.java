@@ -3,15 +3,15 @@ public class Toy extends Product{
   private int MinAge;
 
   public String GetManufacturer(){
-
+    return this.Manufacturer;
   }
-  public void SetManufacturer(){
-
+  public void SetManufacturer(String manufacturer){
+    this.Manufacturer = manufacturer;
   }
   public int GetMinAge(){
-
+    return this.MinAge;
   }
-  public void SetMinAge(){
-    
+  public void SetMinAge(int minAge){
+    this.MinAge = minAge;
   }
 }

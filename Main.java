@@ -8,7 +8,12 @@ public CodeChallenge {
       String read = in.readLine();
       while(read != null){
         String[] tokens = read.split(";");
-        
+        Toy toy = new Toy();
+        toy.SetId(Integer.parseInt(tokens[0]));
+        toy.SetName(tokens[1]);
+        toy.SetCost(Float.parseFloat(tokens[2]));
+        toy.SetManufacturer(tokens[3]);
+        toy.SetMinAge(Integer.parseInt(tokens[4]));
         read = in.readLine();
       }
       in.close();
