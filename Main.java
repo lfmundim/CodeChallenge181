@@ -11,7 +11,7 @@ public class Main {
 	  IStore store = storeBuilder.Build();
 	  List<Customer> checkout = store.Checkout();
 	  try {          
-		  BufferedWriter out = new BufferedWriter(new FileWriter("E:/Eclipse Workspace/CodeChallenge/src/arquivos-exemplo/result.csv"));
+		  BufferedWriter out = new BufferedWriter(new FileWriter("./arquivos-exemplo/result.csv"));
 		  for(Customer c : checkout) {
 			  out.write(c.GetId()+";"+c.GetTotalCost());
 			  out.newLine();				  

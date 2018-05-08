@@ -31,7 +31,7 @@ public class StoreBuilder implements IStoreBuilder {
 	}
 	
 	private void GetCustomers(Store store) throws FileNotFoundException, IOException {
-		BufferedReader in = new BufferedReader(new FileReader("E:/Eclipse Workspace/CodeChallenge/src/arquivos-exemplo/clientes.csv"));
+		BufferedReader in = new BufferedReader(new FileReader("./arquivos-exemplo/clientes.csv"));
 		int size = Integer.parseInt(in.readLine());
 		for(int i = 0; i < size; i++){
 			String read = in.readLine();
@@ -50,7 +50,7 @@ public class StoreBuilder implements IStoreBuilder {
 	}
 
 	private void GetToys(Store store) throws FileNotFoundException, IOException {
-		BufferedReader in = new BufferedReader(new FileReader("E:/Eclipse Workspace/CodeChallenge/src/arquivos-exemplo/brinquedos.csv"));
+		BufferedReader in = new BufferedReader(new FileReader("./arquivos-exemplo/brinquedos.csv"));
 		int size = Integer.parseInt(in.readLine());
 		for(int i = 0; i < size; i++){
 			String read = in.readLine();
@@ -68,7 +68,7 @@ public class StoreBuilder implements IStoreBuilder {
 	}
 	
 	private void GetGifts(Store store) throws FileNotFoundException, IOException {
-		BufferedReader in = new BufferedReader(new FileReader("E:/Eclipse Workspace/CodeChallenge/src/arquivos-exemplo/presentes.csv"));
+		BufferedReader in = new BufferedReader(new FileReader("./arquivos-exemplo/presentes.csv"));
 		int size = Integer.parseInt(in.readLine());
 		for(int i = 0; i < size; i++){
 			String read = in.readLine();
@@ -84,7 +84,7 @@ public class StoreBuilder implements IStoreBuilder {
 		in.close();
 	}
 	private void GetBooks(Store store) throws FileNotFoundException, IOException {
-		BufferedReader in = new BufferedReader(new FileReader("E:/Eclipse Workspace/CodeChallenge/src/arquivos-exemplo/livros.csv"));
+		BufferedReader in = new BufferedReader(new FileReader("./arquivos-exemplo/livros.csv"));
 		int size = Integer.parseInt(in.readLine());
 		for(int i = 0; i < size; i++){
 			String read = in.readLine();
