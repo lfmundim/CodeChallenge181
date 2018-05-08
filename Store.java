@@ -36,7 +36,7 @@ public class Store implements IStore{
   public List<Customer> Checkout() {
 	  try {
 		  // Gather everything
-		  BufferedReader in = new BufferedReader(new FileReader("E:/Eclipse Workspace/CodeChallenge/src/arquivos-exemplo/compras.csv"));
+		  BufferedReader in = new BufferedReader(new FileReader("./arquivos-exemplo/compras.csv"));
 		  int size = Integer.parseInt(in.readLine());
 		  int cart = 0, previousCustomerId = -1;
 		  for(int i = 0; i < size; i++){
