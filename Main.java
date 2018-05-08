@@ -1,25 +1,32 @@
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
-public CodeChallenge {
+import java.util.List;
+
+public class Main {
   public static void main(String[] args) {
-    try {
-      BufferedReader in = new BufferedReader(new FileReader("./arquivos-exemplo/brinquedos.csv"));
-      String read = in.readLine();
-      while(read != null){
-        String[] tokens = read.split(";");
-        Toy toy = new Toy();
-        toy.SetId(Integer.parseInt(tokens[0]));
-        toy.SetName(tokens[1]);
-        toy.SetCost(Float.parseFloat(tokens[2]));
-        toy.SetManufacturer(tokens[3]);
-        toy.SetMinAge(Integer.parseInt(tokens[4]));
-        read = in.readLine();
-      }
-      in.close();
-    }
-    catch(IOException e) {
-      System.out.println(e);
-    }
+      IStoreBuilder storeBuilder = StoreBuilder.getInstance();
+	  IStore store = storeBuilder.Build();
+	  List<Customer> checkout = store.Checkout();
+	  try {          
+		  BufferedWriter out = new BufferedWriter(new FileWriter("E:/Eclipse Workspace/CodeChallenge/src/arquivos-exemplo/result.csv"));
+		  for(Customer c : checkout) {
+			  out.write(c.GetId()+";"+c.GetTotalCost());
+			  out.newLine();				  
+			  for(int i = 0; i < c.GetCartCounter(); i++) {
+				  ICart x = c.GetCarts().get(i);
+				  Product p = x.GetProducts().get(0);
+				  int quantity = x.GetProducts().size();
+				  out.write(c.GetId()+";"+p.GetId()+";"+p.GetType().getValue()+";"+quantity+";"+p.GetCost()+";"+p.GetPrice());
+				  out.newLine();
+			  }
+		  }
+		  out.close();
+	  } 
+	  catch (IOException e) {
+		  System.out.println(e);
+	  }   
   }
 }

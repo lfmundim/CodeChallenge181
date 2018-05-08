@@ -3,23 +3,26 @@ public class Gift extends Product{
     private int Tax;
 
     public Gift (){
-        super()
+        this.SetType(ProductType.Gift);
     }
 
     public void SetTax(){
         this.Tax = 15;
     }
     public int GetTax(){
-        return this.Tax
+        return this.Tax;
     }
-    public void SetManufacturer{
-        this.Manufacturer =
+    public void SetManufacturer(String manufacturer){
+        this.Manufacturer = manufacturer;
+    }
+    public String GetManufacturer() {
+    	return this.Manufacturer;
     }
 
-    @Overide
+    @Override
     public float GetPrice(){
         return( ((GetTax() / 100) * GetCost()) + GetCost() ); 
-    }   
+    }
 }
 
 

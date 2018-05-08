@@ -1,6 +1,4 @@
-using Enumerations;
-
-public class Product implements IProduct{
+public abstract class Product implements IProduct{
   private int Id;
   private String Name;
   private float Cost;
@@ -10,28 +8,28 @@ public class Product implements IProduct{
     
   }
   public ProductType GetType(){
-    return this.Type
+	  return this.Type;
   }
-  public void SetType(){
-
+  public void SetType(ProductType type){
+	  this.Type = type;
   }
   public int GetId(){
-    return this.Id
+	  return this.Id;
   }
-  public void SetId(){
-
+  public void SetId(int id){
+	  this.Id = id;
   }
   public String GetName(){
-    return this.Name
+	  return this.Name;
   }
-  public void SetName(){
-
+  public void SetName(String tokens){
+	  this.Name = tokens;
   }
   public float GetCost(){
-    return this.Cost
+	  return this.Cost;
   }
-  public void SetCost(){
-
+  public void SetCost(float cost){
+	  this.Cost = cost;
   }
   public abstract float GetPrice();
 }

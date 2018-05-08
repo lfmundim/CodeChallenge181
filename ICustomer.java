@@ -1,15 +1,19 @@
+import java.util.List;
+
 public interface ICustomer{
   boolean IsPremium();
-  void SetPremium();
+  void SetPremium(boolean isPremium);
   int GetId();
-  void SetId();
+  void SetId(int id);
   String GetAddress();
-  void SetAddress();
+  void SetAddress(String address);
   String GetName();
-  void SetName();
+  void SetName(String name);
   String GetCpf();
-  void SetCpf();
+  void SetCpf(String cpf);
   String GetTelephone();
-  void SetTelephone();
-  void AddToCart(Product product);
+  void SetTelephone(String telephone);
+  void AddToCart(Product product, int cart);
+  List<ICart> GetCarts();
+  void AddCart();
 }

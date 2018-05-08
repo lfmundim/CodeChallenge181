@@ -1,3 +1,6 @@
+import java.util.List;
+
 public interface ICart{
-  IProduct[] GetProducts();
+  List<Product> GetProducts();
+  void SetProducts(List<Product> products);
 }

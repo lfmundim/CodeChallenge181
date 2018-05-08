@@ -2,6 +2,10 @@ public class Toy extends Product{
   private String Manufacturer;
   private int MinAge;
 
+  public Toy() {
+	  this.SetType(ProductType.Toy);
+  }
+
   public String GetManufacturer(){
     return this.Manufacturer;
   }
@@ -13,5 +17,9 @@ public class Toy extends Product{
   }
   public void SetMinAge(int minAge){
     this.MinAge = minAge;
+  }
+  @Override
+  public float GetPrice() {
+	  return GetCost();
   }
 }
