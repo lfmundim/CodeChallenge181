@@ -80,7 +80,7 @@ public class Store implements IStore{
   }
   private Product GetProductFromIdAndType(int productId, ProductType type) {
 	  List<Product> productList = GetProducts();
-	  if(productId > 3) productId = 3; //Workaround já que não existe no template algum ID maior que esse, mas a entrada possui
+	  if(productId > 3) productId = 3; //Workaround ja que nao existe no template algum ID maior que esse, mas a entrada possui
 	  for(Product p : productList) {
 		  if(p.GetId() == productId && p.GetType() == type)
 			  return p;
